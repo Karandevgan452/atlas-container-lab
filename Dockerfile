@@ -1,5 +1,4 @@
-# Atlas container lab image
-FROM node:99-alpine
+FROM node:18-alpine
 
 WORKDIR /app
 
@@ -12,6 +11,10 @@ COPY . .
 
 # Document the port the container listens on
 EXPOSE 3000
+
+ENV APP_ENV=local
+ENV APP_PORT=5000
+
 
 # Start the app
 CMD ["npm", "start"]
